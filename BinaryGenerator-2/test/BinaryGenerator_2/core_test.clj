@@ -13,8 +13,8 @@
   (cond (= length 0)  [""]
 
         (= length 1)
-        (into (prepend-str-to-list-of-strs "0" (binary-generator 0))
-              (prepend-str-to-list-of-strs "1" (binary-generator 0)))
+        (into (prepend-str-to-list-of-strs "0" (binary-generator (dec length)))
+              (prepend-str-to-list-of-strs "1" (binary-generator (dec length))))
 
         (= length 2)
         (into (prepend-str-to-list-of-strs "0" (binary-generator 1))
