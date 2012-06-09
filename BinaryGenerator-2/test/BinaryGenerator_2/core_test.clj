@@ -8,7 +8,7 @@
 (defn binary-generator [length]
   (cond (= length 0)  [""]
         (= length 1) ["0" "1"]
-        :else ["00" "01" "10" "11"]))
+        :else (into ["00" "01"] ["10" "11"])))
 
 (deftest test-when-n-is-0-return-list-contains-empty-sequence
   (is (= [""] (binary-generator 0))))
