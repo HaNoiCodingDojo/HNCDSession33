@@ -14,8 +14,15 @@
 
         :else
         (let [binary-seq-of-length-minus-1 (binary-generator (dec length))]
+;          (some-other-function binary-seq-of-length-minus-1 [ "0" "1"]))))
           (into (prepend-str-to-list-of-strs "0" binary-seq-of-length-minus-1)
                 (prepend-str-to-list-of-strs "1" binary-seq-of-length-minus-1)))))
+
+(deftest some-other-function-is-equivalent-to-that-into-block
+  (is (let [binary-seq-of-length-minus-1 ""]
+        (= (into (prepend-str-to-list-of-strs "0" binary-seq-of-length-minus-1)
+                 (prepend-str-to-list-of-strs "1" binary-seq-of-length-minus-1))
+           (some-other-function binary-seq-of-length-minus-1 [ "0" "1"])))))
 
 (deftest test-when-n-is-0-return-list-contains-empty-sequence
   (is (= [""] (binary-generator 0))))
@@ -33,3 +40,6 @@
 
 (deftest test-when-n-is-3
   ( is (= ["000" "001" "010" "011" "100" "101" "110" "111" ] (binary-generator 3))))
+
+
+
