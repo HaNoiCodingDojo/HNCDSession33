@@ -13,8 +13,9 @@
   (cond (= length 0)  [""]
 
         :else
-        (into (prepend-str-to-list-of-strs "0" (binary-generator (dec length)))
-              (prepend-str-to-list-of-strs "1" (binary-generator (dec length))))))
+        (let [binary-seq-of-length-minus-1 (binary-generator (dec length))]
+          (into (prepend-str-to-list-of-strs "0" binary-seq-of-length-minus-1)
+                (prepend-str-to-list-of-strs "1" binary-seq-of-length-minus-1)))))
 
 (deftest test-when-n-is-0-return-list-contains-empty-sequence
   (is (= [""] (binary-generator 0))))
