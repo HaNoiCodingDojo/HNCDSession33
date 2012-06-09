@@ -11,6 +11,7 @@
 
 ;;; "" ["0" "1"] => ["0" "1"]
 ;;; "0" ["0" "1"] => ["00" "01"]
+
 (defn some-other-function [sequence some-strings]
   (vec (map (fn [element] (prepend-str-to-list-of-strs element sequence)) some-strings)))
 
@@ -24,7 +25,7 @@
                 (prepend-str-to-list-of-strs "1" binary-seq-of-length-minus-1)))))
 
 (deftest some-other-function-is-equivalent-to-that-into-block
-  (is (let [binary-seq-of-length-minus-1 ""]
+  (let [binary-seq-of-length-minus-1 ""] (is
         (= (into (prepend-str-to-list-of-strs "0" binary-seq-of-length-minus-1)
                  (prepend-str-to-list-of-strs "1" binary-seq-of-length-minus-1))
            (some-other-function binary-seq-of-length-minus-1 [ "0" "1"])))))
