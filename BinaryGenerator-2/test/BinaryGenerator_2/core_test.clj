@@ -11,7 +11,11 @@
 
 (defn binary-generator [length]
   (cond (= length 0)  [""]
-        (= length 1) ["0" "1"]
+
+        (= length 1)
+        (into (prepend-str-to-list-of-strs "0" [""])
+              (prepend-str-to-list-of-strs "1" [""]))
+
         (= length 2)
         (into (prepend-str-to-list-of-strs "0" ["0" "1"])
               (prepend-str-to-list-of-strs "1" ["0" "1"]))))
