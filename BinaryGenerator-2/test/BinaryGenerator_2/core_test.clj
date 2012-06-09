@@ -15,14 +15,20 @@
 (defn some-other-function [sequence some-strings]
   (apply into (map (fn [element] (prepend-str-to-list-of-strs element sequence)) some-strings)))
 
+(def some-other-function-two [sequence]
+  (apply into (map (fn [element] (prepend-str-to-list-of-strs element sequence)) ["0" "1"]])))
+
 (defn binary-generator [length]
   (cond (= length 0)  [""]
 
         :else
         (let [binary-seq-of-length-minus-1 (binary-generator (dec length))]
-;          (some-other-function binary-seq-of-length-minus-1 [ "0" "1"]))))
-          (into (prepend-str-to-list-of-strs "0" binary-seq-of-length-minus-1)
-                (prepend-str-to-list-of-strs "1" binary-seq-of-length-minus-1)))))
+          (some-other-function binary-seq-of-length-minus-1 ["0" "1"]))))
+;          (some-other-function-two binary-seq-of-length-minus-1))))
+
+(deftest some-other-function-two-is-curried-some-other-function
+  (is (= (some-other-function [""] ["0" "1"])
+         (some-other-function-two [""]))))
 
 (deftest some-other-function-works-with-empty-strings
   (is(= ["0" "1"] (some-other-function [""] ["0" "1"]))))
