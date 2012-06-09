@@ -2,6 +2,9 @@
   (:use clojure.test
         BinaryGenerator-2.core))
 
+;;; n = 1 -> ["0" "1"]
+;;; n = 2 -> ["00" "01" "10" "11"]
+
 (defn binary-generator [length]
   [[]])
 
