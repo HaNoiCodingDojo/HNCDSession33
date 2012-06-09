@@ -29,4 +29,7 @@
 
 (deftest test-prepend-str-to-list-of-strs-prepends-0-to-list-0-1
   ( is (= [(str "0" "0") (str "0" "1")] (prepend-str-to-list-of-strs "0" ["0" "1"])))
-)
+  )
+
+(deftest test-when-n-is-3
+  ( is (= ["000" "001" "010" "011" "100" "101" "110" "111" ] (binary-generator 3))))
