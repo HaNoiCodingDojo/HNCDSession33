@@ -6,7 +6,7 @@
 ;;; n = 2 -> ["00" "01" "10" "11"]
 
 (defn binary-generator [length]
-  [[]])
+  [""])
 
 (deftest test-when-n-is-0-return-list-contains-empty-sequence
-  (is (= [[]] (binary-generator 0))))
+  (is (= [""] (binary-generator 0))))
