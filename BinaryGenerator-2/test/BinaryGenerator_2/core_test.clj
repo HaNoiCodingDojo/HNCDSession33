@@ -21,4 +21,4 @@
   ( is (= ["00" "01" "10" "11" ] (binary-generator 2))))
 
 (deftest test-prepend-str-to-list-of-strs-prepends-0-to-list-0-1
-  ( is (= [(str "0" "0") (str "0" "1")] (somefun "0" ["0" "1"]))))
+  ( is (= [(str "0" "0") (str "0" "1")] (prepend-str-to-list-of-strs "0" ["0" "1"]))))
