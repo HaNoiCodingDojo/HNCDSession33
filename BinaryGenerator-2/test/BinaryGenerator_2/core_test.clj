@@ -6,8 +6,8 @@
 ;;; n = 2 -> ["00" "01" "10" "11"]
 
 (defn prepend-str-to-list-of-strs [prepender prependees]
-  (map (fn [element] (str prepender element))
-       prependees))
+  (vec (map (fn [element] (str prepender element))
+            prependees)))
 
 (defn binary-generator [length]
   (cond (= length 0)  [""]
