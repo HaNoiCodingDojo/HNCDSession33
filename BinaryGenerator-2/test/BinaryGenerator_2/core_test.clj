@@ -9,11 +9,11 @@
   (vec (map (fn [element] (str prepender element))
             prependees)))
 
-;;; "" ["0" "1"] => ["0" "1"]
-;;; "0" ["0" "1"] => ["00" "01"]
+;;; [""] ["0" "1"] => ["0" "1"]
+;;; ["0" "1"] ["0" "1"] => ["00" "01" "10" "11"]
 
 (defn some-other-function [sequence some-strings]
-  (vec (into(map (fn [element] (prepend-str-to-list-of-strs element sequence)) some-strings))))
+  (vec (into (map (fn [element] (prepend-str-to-list-of-strs element sequence)) some-strings))))
 
 (defn binary-generator [length]
   (cond (= length 0)  [""]
@@ -23,6 +23,9 @@
 ;          (some-other-function binary-seq-of-length-minus-1 [ "0" "1"]))))
           (into (prepend-str-to-list-of-strs "0" binary-seq-of-length-minus-1)
                 (prepend-str-to-list-of-strs "1" binary-seq-of-length-minus-1)))))
+
+(deftest some-other-function-works-with-empty-strings
+  (is(= ["0" "1"] (some-other-function [""] ["0" "1"]))))
 
 (deftest some-other-function-is-equivalent-to-that-into-block
   (let [binary-seq-of-length-minus-1 [""]] (is
