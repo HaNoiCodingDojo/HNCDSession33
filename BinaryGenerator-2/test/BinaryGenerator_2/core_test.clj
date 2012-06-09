@@ -23,8 +23,8 @@
 
         :else
         (let [binary-seq-of-length-minus-1 (binary-generator (dec length))]
-          (some-other-function binary-seq-of-length-minus-1 ["0" "1"]))))
-;          (some-other-function-two binary-seq-of-length-minus-1))))
+;          (some-other-function binary-seq-of-length-minus-1 ["0" "1"]))))
+          (some-other-function-two binary-seq-of-length-minus-1))))
 
 (deftest some-other-function-two-is-curried-some-other-function
   (is (= (some-other-function [""] ["0" "1"])
