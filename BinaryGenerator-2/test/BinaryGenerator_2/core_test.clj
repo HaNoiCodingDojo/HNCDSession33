@@ -17,8 +17,8 @@
               (prepend-str-to-list-of-strs "1" (binary-generator 0)))
 
         (= length 2)
-        (into (prepend-str-to-list-of-strs "0" ["0" "1"])
-              (prepend-str-to-list-of-strs "1" ["0" "1"]))))
+        (into (prepend-str-to-list-of-strs "0" (binary-generator 1))
+              (prepend-str-to-list-of-strs "1" (binary-generator 1)))))
 
 (deftest test-when-n-is-0-return-list-contains-empty-sequence
   (is (= [""] (binary-generator 0))))
