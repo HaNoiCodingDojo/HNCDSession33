@@ -22,11 +22,10 @@
 ;;; n = 1 -> ["0" "1"]
 ;;; n = 2 -> ["00" "01" "10" "11"]
 (defn binary-generator [length]
-  (cond (= length 0)  [""]
-
-        :else
-        (let [binary-seq-of-length-minus-1 (binary-generator (dec length))]
-          (some-other-function-two binary-seq-of-length-minus-1))))
+  (if (= length 0)  [""]
+      
+      (let [binary-seq-of-length-minus-1 (binary-generator (dec length))]
+        (some-other-function-two binary-seq-of-length-minus-1))))
 
 (deftest test-when-n-is-0-return-list-contains-empty-sequence
   (is (= [""] (binary-generator 0))))
