@@ -16,7 +16,7 @@
   (apply into (map (fn [element] (prepend-str-to-list-of-strs element sequence)) some-strings)))
 
 (def some-other-function-two [sequence]
-  (apply into (map (fn [element] (prepend-str-to-list-of-strs element sequence)) ["0" "1"]])))
+  (apply into (map (fn [element] (prepend-str-to-list-of-strs element sequence)) ["0" "1"])))
 
 (defn binary-generator [length]
   (cond (= length 0)  [""]
