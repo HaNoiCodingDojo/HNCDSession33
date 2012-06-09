@@ -25,7 +25,7 @@
                 (prepend-str-to-list-of-strs "1" binary-seq-of-length-minus-1)))))
 
 (deftest some-other-function-is-equivalent-to-that-into-block
-  (let [binary-seq-of-length-minus-1 ""] (is
+  (let [binary-seq-of-length-minus-1 [""]] (is
         (= (into (prepend-str-to-list-of-strs "0" binary-seq-of-length-minus-1)
                  (prepend-str-to-list-of-strs "1" binary-seq-of-length-minus-1))
            (some-other-function binary-seq-of-length-minus-1 [ "0" "1"])))))
