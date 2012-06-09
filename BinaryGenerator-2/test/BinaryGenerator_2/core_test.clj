@@ -13,7 +13,7 @@
 ;;; "0" ["0" "1"] => ["00" "01"]
 
 (defn some-other-function [sequence some-strings]
-  (vec (map (fn [element] (prepend-str-to-list-of-strs element sequence)) some-strings)))
+  (vec (into(map (fn [element] (prepend-str-to-list-of-strs element sequence)) some-strings))))
 
 (defn binary-generator [length]
   (cond (= length 0)  [""]
