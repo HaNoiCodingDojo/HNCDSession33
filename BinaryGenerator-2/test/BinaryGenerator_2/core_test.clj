@@ -23,7 +23,7 @@
 ;;; n = 2 -> ["00" "01" "10" "11"]
 (defn binary-generator [length]
   (if (= length 0)  [""]
-      
+
       (let [binary-seq-of-length-minus-1 (binary-generator (dec length))]
         (some-other-function-two binary-seq-of-length-minus-1))))
 
